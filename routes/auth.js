@@ -3,12 +3,13 @@ const router = express.Router();
 
 const { register, login, refresh } = require("../controllers/authController");
 
-router.post("/", async (req,res) => {
-    res.sendStatus(400);
-});
-
+// เส้นทางลงทะเบียน
 router.post("/register", register);
-router.post("/login" , login);
-router.post("/refresh" , refresh);
+
+// เส้นทางเข้าสู่ระบบ
+router.post("/login", login);
+
+// เส้นทางรีเฟรชโทเค็น
+router.post("/refresh", refresh);
 
 module.exports = router;
